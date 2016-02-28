@@ -5,4 +5,5 @@
     <string name="title_activity_bus_stops">BusStops</string>
     <string name="title_activity_destination">Destination</string>
     <string name="title_activity_computation">Computation</string>
+    <string name="title_activity_no_sleep">NoSleep</string>
 </resources>

@@ -29,11 +29,14 @@ public class MainActivity extends AppCompatActivity {
      */
 
     private GoogleApiClient client;
-    static Integer inputText = 1;
+    static Integer inputText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        inputText = 1;
+
         setContentView(R.layout.activity_main);
         EditText editBus = (EditText) findViewById(R.id.editText);
         editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
