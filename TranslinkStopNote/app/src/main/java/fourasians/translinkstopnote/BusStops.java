@@ -75,6 +75,7 @@ public class BusStops extends AppCompatActivity {
                 b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 b.setHeight(300);
                 b.setWidth(500);
+                b.setX(300);
 
                 linear1.addView(b);
 

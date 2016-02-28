@@ -30,8 +30,6 @@ public class SecondActivity extends AppCompatActivity {
     Button b;
     ScrollView scrollview;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,8 +38,6 @@ public class SecondActivity extends AppCompatActivity {
         linearlayout.setOrientation(LinearLayout.VERTICAL);
         scrollview.addView(linearlayout);
 
-        //his function, returns Set
-        // buses = his set
         buses.add(1);
         buses.add(2);
         buses.add(3);
@@ -50,7 +46,6 @@ public class SecondActivity extends AppCompatActivity {
         testBusStops.add("Main");
         testBusStops.add("Cambie");
         testBusStops.add("Arbutus");
-
 
         int input = MainActivity.inputText;
         if (buses.contains(input)) {
@@ -68,11 +63,9 @@ public class SecondActivity extends AppCompatActivity {
                 b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
                 b.setHeight(300);
                 b.setWidth(500);
-
+                b.setX(500);
                 linear1.addView(b);
-
                 b.setOnClickListener(new View.OnClickListener() {
-
                     @Override
                     public void onClick(View v) {
                         // TODO Auto-generated method stub
@@ -85,11 +78,6 @@ public class SecondActivity extends AppCompatActivity {
         } else {
             Intent i = new Intent(SecondActivity.this, MainActivity.class);
             startActivity(i);
-
         }
-
-
-
     }
-
 }
