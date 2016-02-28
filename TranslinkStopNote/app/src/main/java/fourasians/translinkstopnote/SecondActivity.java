@@ -1,6 +1,7 @@
 package fourasians.translinkstopnote;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,6 +10,11 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.app.ListActivity;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TableRow;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -21,11 +27,18 @@ public class SecondActivity extends AppCompatActivity {
     private Set<Integer> buses = new HashSet<>();
 
     private List<String> testBusStops = new ArrayList<>();
+    Button b;
+    ScrollView scrollview;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second);
+        scrollview = new ScrollView(this);
+        LinearLayout linearlayout = new LinearLayout(this);
+        linearlayout.setOrientation(LinearLayout.VERTICAL);
+        scrollview.addView(linearlayout);
 
         //his function, returns Set
         // buses = his set
@@ -39,26 +52,41 @@ public class SecondActivity extends AppCompatActivity {
         testBusStops.add("Arbutus");
 
 
-        Log.d("TAG", Integer.toString(MainActivity.inputText));
         int input = MainActivity.inputText;
         if (buses.contains(input)) {
-            //go to the next proper activity
-            //getStops(input); -> returns list of stops;
+            for(int i = 0; i<testBusStops.size();i++)
+            {
+                LinearLayout linear1 = new LinearLayout(this);
+                linear1.setOrientation(LinearLayout.HORIZONTAL);
+                linearlayout.addView(linear1);
+                b = new Button(this);
+                b.setText(testBusStops.get(i));
+                b.setId(i);
+                b.setTextSize(20);
+                b.setPadding(20, 20, 20, 20);
+                b.setTypeface(Typeface.SERIF, Typeface.BOLD_ITALIC);
+                b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
 
-            // get the bus
-            //need to make sure bus has list of string
-            for (String stop : testBusStops) {
-                //create button in
+                linear1.addView(b);
+
+                b.setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+                        // TODO Auto-generated method stub
+                        Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
+            this.setContentView(scrollview);
 
         } else {
-            //go back
             Intent i = new Intent(SecondActivity.this, MainActivity.class);
             startActivity(i);
 
         }
 
-            //do shit
+
 
     }
 
