@@ -37,6 +37,10 @@
         <activity
             android:name=".Destination"
             android:label="@string/title_activity_destination"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Computation"
+            android:label="@string/title_activity_computation"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

@@ -4,4 +4,5 @@
     <string name="title_activity_second">SecondActivity</string>
     <string name="title_activity_bus_stops">BusStops</string>
     <string name="title_activity_destination">Destination</string>
+    <string name="title_activity_computation">Computation</string>
 </resources>

@@ -30,7 +30,7 @@ public class BusStops extends AppCompatActivity {
     Button b;
     ScrollView scrollview;
 
-    public static int stopId;
+    public static int startId;
 
 
     @Override
@@ -68,7 +68,7 @@ public class BusStops extends AppCompatActivity {
             TextView textView = new TextView(this);
             textView.setLayoutParams(param);
             textView.setText("Enter Starting Station");
-            textView.setTextSize(30);
+            textView.setTextSize(20);
             textView.setX(130);
 
             for(int i = -1; i<testBusStops.size();i++)
@@ -98,9 +98,10 @@ public class BusStops extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             // TODO Auto-generated method stub
-                            Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
-                            stopId = v.getId();
+                            //Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
+                            startId = v.getId();
                             Intent i = new Intent(BusStops.this, Destination.class);
+                            startActivity(i);
                         }
                     });
                 }

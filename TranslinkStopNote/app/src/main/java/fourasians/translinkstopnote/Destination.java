@@ -29,6 +29,7 @@ public class Destination extends AppCompatActivity {
     Button b;
     ScrollView scrollview;
 
+    public static int endId;
 
 
     @Override
@@ -61,7 +62,7 @@ public class Destination extends AppCompatActivity {
             WindowManager.LayoutParams param = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
             TextView textView = new TextView(this);
             textView.setLayoutParams(param);
-            textView.setText("Enter Starting Station");
+            textView.setText("Enter Target Station");
             textView.setTextSize(30);
             textView.setX(130);
 
@@ -92,7 +93,15 @@ public class Destination extends AppCompatActivity {
                         @Override
                         public void onClick(View v) {
                             // TODO Auto-generated method stub
-                            Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
+                            endId = v.getId();
+                            if (endId == BusStops.startId) {
+                                Toast.makeText(getApplicationContext(), "Station did not change", Toast.LENGTH_SHORT).show();
+                                Intent j = new Intent(Destination.this, BusStops.class);
+                                startActivity(j);
+                            } else {
+                                Intent i = new Intent(Destination.this, Computation.class);
+                                startActivity(i);
+                            }
                         }
                     });
                 }
