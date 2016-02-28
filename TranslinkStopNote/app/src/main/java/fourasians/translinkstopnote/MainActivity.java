@@ -33,39 +33,48 @@ public class MainActivity extends AppCompatActivity {
         int userInput = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        /*
+
         Button b = (Button) this.findViewById(R.id.button);
 
         b.setOnClickListener(new View.OnClickListener() {
 
                                  @Override
                                  public void onClick(View v) {
-                                     int bus = scanf(text);
-                                     Intent i = new Intent(MainActivity.this, SecondActivity.class);
-
-                                         startActivity(i);
-
+                                     EditText editBus = (EditText) findViewById(R.id.editText);
+                                     editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+                                         @Override
+                                         public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
+                                             boolean handled = false;
+                                             if (input == EditorInfo.IME_ACTION_NONE) {
+                                                 //show something?
+                                                 int inputText = Integer.parseInt(textView.getText().toString());
+                                                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                                                 startActivity(i);
+                                             }
+                                             return false;
+                                         }
+                                     });
                                      }
 
                                  }
-                             }
-        );
-        */
 
-        EditText editBus = (EditText) findViewById(R.id.editText);
-        editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            @Override
-            public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
-                boolean handled = false;
-                if (input == EditorInfo.IME_ACTION_DONE) {
-                    //show something?
-                    int inputText = Integer.parseInt(textView.getText().toString());
-                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                    startActivity(i);
-                }
-                return false;
-            }
-        });
+        );
+
+
+//        EditText editBus = (EditText) findViewById(R.id.editText);
+//        editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+//            @Override
+//            public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
+//                boolean handled = false;
+//                if (input == EditorInfo.IME_ACTION_DONE) {
+//                    //show something?
+//                    int inputText = Integer.parseInt(textView.getText().toString());
+//                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+//                    startActivity(i);
+//                }
+//                return false;
+//            }
+//        });
 
 
     }
