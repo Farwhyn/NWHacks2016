@@ -15,6 +15,7 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import android.content.Intent;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         int userInput = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        /*
         Button b = (Button) this.findViewById(R.id.button);
 
         b.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +47,12 @@ public class MainActivity extends AppCompatActivity {
                                  }
                              }
         );
+        */
+
+        EditText editBus = (EditText) findViewById(R.id.editText3);
+        
 
 
     }
+
 }
