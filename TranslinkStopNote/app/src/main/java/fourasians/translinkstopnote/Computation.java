@@ -105,8 +105,8 @@ public class Computation extends AppCompatActivity {
     }
 
     public double findEstimateError() {
-        estimationErrors = Arrays.asList(0.000, 0.000, 0.597, 0.395, 0.369, 0.476, 0.189, 0.000, 0.501, 0.501, 0.597, 0.644,
-                0.579);
+        estimationErrors = Arrays.asList(0.000, 0.000, 1.889, 1.248, 1.167, 1.504, 0.598, 0.000, 1.586, 1.586, 1.889, 2.037
+                ,1.830);
         if (Destination.endId > BusStops.startId) {
             List<Double> subset = estimationErrors.subList(BusStops.startId+1, Destination.endId);
             estimationError = 0.0;
