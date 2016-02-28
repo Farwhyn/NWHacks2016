@@ -15,14 +15,14 @@ public class SecondActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
 
-        if(userInput == 0) {
-            //set up error page with button that goes back
-        }
-
-        else {
-
-            //do shit
-        }
+//        if(userInput == 0) {
+//            //set up error page with button that goes back
+//        }
+//
+//        else {
+//
+//            //do shit
+//        }
     }
 
 }

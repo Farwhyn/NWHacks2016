@@ -6,9 +6,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 
 import com.google.android.gms.appindexing.Action;
@@ -16,6 +18,7 @@ import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import android.content.Intent;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,8 +52,20 @@ public class MainActivity extends AppCompatActivity {
         );
         */
 
-        EditText editBus = (EditText) findViewById(R.id.editText3);
-        
+        EditText editBus = (EditText) findViewById(R.id.editText);
+        editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
+                boolean handled = false;
+                if (input == EditorInfo.IME_ACTION_DONE) {
+                    //show something?
+                    int inputText = Integer.parseInt(textView.getText().toString());
+                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(i);
+                }
+                return false;
+            }
+        });
 
 
     }
