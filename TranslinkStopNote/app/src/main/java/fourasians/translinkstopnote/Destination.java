@@ -21,16 +21,14 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class BusStops extends AppCompatActivity {
+public class Destination extends AppCompatActivity {
 
     //private int bus = 99;
-    private Set<Integer> buses = new HashSet<>();
 
     private List<String> testBusStops = new ArrayList<>();
     Button b;
     ScrollView scrollview;
 
-    public static int stopId;
 
 
     @Override
@@ -43,10 +41,7 @@ public class BusStops extends AppCompatActivity {
 
         //his function, returns Set
         // buses = his set
-        buses.add(1);
-        buses.add(2);
-        //buses.add(3);
-        //buses.add(99);
+
 
         testBusStops.add("Commercial");
         testBusStops.add("Clark");
@@ -63,7 +58,6 @@ public class BusStops extends AppCompatActivity {
         testBusStops.add("UBC");
 
         int input = MainActivity.inputText;
-        if (buses.contains(input)) {
             WindowManager.LayoutParams param = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
             TextView textView = new TextView(this);
             textView.setLayoutParams(param);
@@ -99,20 +93,14 @@ public class BusStops extends AppCompatActivity {
                         public void onClick(View v) {
                             // TODO Auto-generated method stub
                             Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
-                            stopId = v.getId();
-                            Intent i = new Intent(BusStops.this, Destination.class);
                         }
                     });
                 }
                 this.setContentView(scrollview);
-                }
+            }
 
 
 
-        } else {
-            Intent i = new Intent(BusStops.this, MainActivity.class);
-            startActivity(i);
 
-        }
     }
 }

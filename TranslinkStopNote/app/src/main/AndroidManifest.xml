@@ -33,6 +33,10 @@
         <activity
             android:name=".BusStops"
             android:label="@string/title_activity_bus_stops"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Destination"
+            android:label="@string/title_activity_destination"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
