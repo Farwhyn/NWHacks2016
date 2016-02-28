@@ -8,10 +8,12 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -42,8 +44,8 @@ public class BusStops extends AppCompatActivity {
         // buses = his set
         buses.add(1);
         buses.add(2);
-        buses.add(3);
-        buses.add(99);
+        //buses.add(3);
+        //buses.add(99);
 
         testBusStops.add("Commercial");
         testBusStops.add("Clark");
@@ -61,34 +63,48 @@ public class BusStops extends AppCompatActivity {
 
         int input = MainActivity.inputText;
         if (buses.contains(input)) {
-            for(int i = 0; i<testBusStops.size();i++)
+            WindowManager.LayoutParams param = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
+            TextView textView = new TextView(this);
+            textView.setLayoutParams(param);
+            textView.setText("Enter Starting Station");
+            textView.setTextSize(30);
+            textView.setX(130);
+
+            for(int i = -1; i<testBusStops.size();i++)
             {
                 LinearLayout linear1 = new LinearLayout(this);
                 linear1.setOrientation(LinearLayout.HORIZONTAL);
                 linearlayout.addView(linear1);
-                b = new Button(this);
-                b.setText(testBusStops.get(i));
-                b.setId(i);
-                b.setTextSize(20);
-                //b.setPadding(20, 20, 20, 20);
-                b.setTypeface(Typeface.SERIF, Typeface.BOLD_ITALIC);
-                b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
-                b.setHeight(300);
-                b.setWidth(500);
-                b.setX(300);
 
-                linear1.addView(b);
+                if(i == -1)
+                {
+                    linear1.addView(textView);
+                }
+                else {
+                    b = new Button(this);
+                    b.setText(testBusStops.get(i));
+                    b.setId(i);
+                    b.setTextSize(20);
+                    //b.setPadding(20, 20, 20, 20);
+                    b.setTypeface(Typeface.SERIF, Typeface.BOLD_ITALIC);
+                    b.setLayoutParams(new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT, TableRow.LayoutParams.WRAP_CONTENT));
+                    b.setHeight(300);
+                    b.setWidth(500);
+                    b.setX(300);
+                    linear1.addView(b);
+                    b.setOnClickListener(new View.OnClickListener() {
 
-                b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            // TODO Auto-generated method stub
+                            Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+                }
+                this.setContentView(scrollview);
+                }
 
-                    @Override
-                    public void onClick(View v) {
-                        // TODO Auto-generated method stub
-                        Toast.makeText(getApplicationContext(), "User entered " + v.getId(), Toast.LENGTH_SHORT).show();
-                    }
-                });
-            }
-            this.setContentView(scrollview);
+
 
         } else {
             Intent i = new Intent(BusStops.this, MainActivity.class);

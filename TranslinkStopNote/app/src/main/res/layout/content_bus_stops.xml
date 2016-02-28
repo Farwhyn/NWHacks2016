@@ -12,4 +12,13 @@
     tools:context="fourasians.translinkstopnote.BusStops"
     tools:showIn="@layout/activity_bus_stops">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Input Starting Station"
+        android:id="@+id/textView3"
+        android:layout_marginTop="26dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -36,7 +36,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button b = (Button) this.findViewById(R.id.button);
         EditText editBus = (EditText) findViewById(R.id.editText);
         editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
