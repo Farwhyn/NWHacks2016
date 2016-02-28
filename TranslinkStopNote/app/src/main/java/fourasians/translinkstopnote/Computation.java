@@ -19,7 +19,7 @@ public class Computation extends AppCompatActivity {
 
     private List<Integer> estimatedTimes;
     private double estimatedTime;
-    ScrollView scrollview;
+    //ScrollView scrollview;
 
 
     @Override
@@ -27,29 +27,31 @@ public class Computation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_computation);
 
-        scrollview = new ScrollView(this);
-        LinearLayout linearlayout = new LinearLayout(this);
-        linearlayout.setOrientation(LinearLayout.VERTICAL);
-        scrollview.addView(linearlayout);
+        //scrollview = new ScrollView(this);
+        //LinearLayout linearlayout = new LinearLayout(this);
+        //linearlayout.setOrientation(LinearLayout.VERTICAL);
+        //scrollview.addView(linearlayout);
 
-        WindowManager.LayoutParams param = new WindowManager.LayoutParams(WindowManager.LayoutParams.WRAP_CONTENT, WindowManager.LayoutParams.WRAP_CONTENT);
-        TextView textView = new TextView(this);
-        textView.setLayoutParams(param);
-        textView.setText("Enter Starting Station");
-        textView.setTextSize(20);
-        textView.setX(130);
-        textView.setY(500);
+        TextView textView = (TextView) findViewById(R.id.textView4);
+        textView.setText("Estimated arrival time: " + findEstimate() + " mins");
+        //textView.setText("Enter Starting Station");
 
-        LinearLayout linear1 = new LinearLayout(this);
-        linear1.setOrientation(LinearLayout.HORIZONTAL);
-        linearlayout.addView(linear1);
-        linear1.addView(textView);
+        //linearlayout.addView(textView);
+
+
+
+
+
+//        LinearLayout linear1 = new LinearLayout(this);
+//        linear1.setOrientation(LinearLayout.HORIZONTAL);
+//        linearlayout.addView(linear1);
+//        linear1.addView(textView);
 
 
 
     }
 
-    private double findEstimate() {
+    public double findEstimate() {
         estimatedTimes = Arrays.asList(1456672950, 1456673010, 1456673148, 1456673310, 1456673430,
                 1456673508,1456673688, 1456673868, 1456673988, 1456674228, 1456674486, 1456674846,
                 1456674966);

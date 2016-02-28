@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -30,6 +31,10 @@ public class Destination extends AppCompatActivity {
     ScrollView scrollview;
 
     public static int endId;
+
+
+    private List<Integer> estimatedTimes;
+    private double estimatedTime;
 
 
     @Override
@@ -99,6 +104,7 @@ public class Destination extends AppCompatActivity {
                                 Intent j = new Intent(Destination.this, BusStops.class);
                                 startActivity(j);
                             } else {
+
                                 Intent i = new Intent(Destination.this, Computation.class);
                                 startActivity(i);
                             }
