@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
     private GoogleApiClient client;
+    public int inputText = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,18 +46,19 @@ public class MainActivity extends AppCompatActivity {
                                          @Override
                                          public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
                                              boolean handled = false;
-                                             if (input == EditorInfo.IME_ACTION_NONE) {
-                                                 //show something?
-                                                 int inputText = Integer.parseInt(textView.getText().toString());
-                                                 Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                                                 startActivity(i);
+                                             if (input == EditorInfo.IME_ACTION_DONE) {
+                                                 inputText = Integer.parseInt(textView.getText().toString());
                                              }
                                              return false;
                                          }
+
                                      });
-                                     }
+                                     Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                                     startActivity(i);
+
 
                                  }
+                             }
 
         );
 
