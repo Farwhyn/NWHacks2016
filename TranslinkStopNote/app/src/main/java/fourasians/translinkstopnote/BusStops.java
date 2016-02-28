@@ -27,6 +27,9 @@ public class BusStops extends AppCompatActivity {
     private Set<Integer> buses = new HashSet<>();
 
     private List<String> testBusStops = new ArrayList<>();
+    private List<String> testBusStops41 = new ArrayList<>();
+    private List<String> testBusStops84 = new ArrayList<>();
+
     Button b;
     ScrollView scrollview;
 
