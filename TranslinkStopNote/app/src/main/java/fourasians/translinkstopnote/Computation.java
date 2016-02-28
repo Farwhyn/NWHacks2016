@@ -17,10 +17,15 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.lang.StrictMath.round;
+import static java.lang.String.format;
+
 public class Computation extends AppCompatActivity {
 
     private List<Integer> estimatedTimes;
     private double estimatedTime;
+    private List<Double> estimationErrors;
+    private double estimationError;
     //ScrollView scrollview;
 
 
@@ -35,14 +40,16 @@ public class Computation extends AppCompatActivity {
         //scrollview.addView(linearlayout);
 
         TextView textView4 = (TextView) findViewById(R.id.textView4);
-        textView4.setText("Estimated arrival time: " + findEstimate() + " mins");
+        textView4.setText("Estimated arrival time: " + format("%.2f", findEstimate()) + " mins. (Error: ±" + format("%.2f", findEstimateError()) + " mins)");
         //textView.setText("Enter Starting Station");
 
         //linearlayout.addView(textView);
 
 
         TextView textView8 = (TextView) findViewById(R.id.textView8);
-        textView8.setText("Estimated nap time: " + findEstimateNap() + " mins");
+        textView8.setText("Estimated nap time: " + format("%.2f", findEstimateNap()) + " mins.");
+
+
 
 
 
@@ -69,24 +76,23 @@ public class Computation extends AppCompatActivity {
     }
 
     public double findEstimate() {
-        estimatedTimes = Arrays.asList(1456672950, 1456673010, 1456673148, 1456673310, 1456673430,
-                1456673508,1456673688, 1456673868, 1456673988, 1456674228, 1456674486, 1456674846,
-                1456674966);
+        estimatedTimes = Arrays.asList(1456677938, 1456677998, 1456678430, 1456678716, 1456678923, 1456679099,
+                1456679271, 1456679451, 1456679541, 1456679750, 1456679930, 1456680111,
+                1456680231);
         if (Destination.endId > BusStops.startId) {
             estimatedTime = (estimatedTimes.get(Destination.endId)
                     - estimatedTimes.get(BusStops.startId))/60.0;
         } else {
             estimatedTime = (estimatedTimes.get(BusStops.startId)
                     - estimatedTimes.get(Destination.endId))/60.0;
-
         }
         return estimatedTime;
     }
 
     public double findEstimateNap() {
-        estimatedTimes = Arrays.asList(1456672950, 1456673010, 1456673148, 1456673310, 1456673430,
-                1456673508,1456673688, 1456673868, 1456673988, 1456674228, 1456674486, 1456674846,
-                1456674966);
+        estimatedTimes = Arrays.asList(1456677938, 1456677998, 1456678430, 1456678716, 1456678923, 1456679099,
+                1456679271, 1456679451, 1456679541, 1456679750, 1456679930, 1456680111,
+                1456680231);
         if (Destination.endId > BusStops.startId) {
             estimatedTime = (estimatedTimes.get(Destination.endId-1)
                     - estimatedTimes.get(BusStops.startId))/60.0;
@@ -96,6 +102,25 @@ public class Computation extends AppCompatActivity {
 
         }
         return estimatedTime;
+    }
+
+    public double findEstimateError() {
+        estimationErrors = Arrays.asList(0.000, 0.000, 0.597, 0.395, 0.369, 0.476, 0.189, 0.000, 0.501, 0.501, 0.597, 0.644,
+                0.579);
+        if (Destination.endId > BusStops.startId) {
+            List<Double> subset = estimationErrors.subList(BusStops.startId+1, Destination.endId);
+            estimationError = 0.0;
+            for (Double error : subset) {
+                estimationError += error;
+            }
+        } else {
+            List<Double> subset = estimationErrors.subList(Destination.endId+1, BusStops.startId);
+            estimationError = 0.0;
+            for (Double error : subset) {
+                estimationError += error;
+            }
+        }
+        return estimationError;
     }
 
 
