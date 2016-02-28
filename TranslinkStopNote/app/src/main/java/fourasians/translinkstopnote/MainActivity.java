@@ -6,6 +6,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.Menu;
@@ -26,59 +27,45 @@ public class MainActivity extends AppCompatActivity {
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
+
     private GoogleApiClient client;
-    public int inputText = 0;
+    static Integer inputText = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        int userInput = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button b = (Button) this.findViewById(R.id.button);
+        EditText editBus = (EditText) findViewById(R.id.editText);
+        editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
+                Log.d("taga", "3");
 
-        b.setOnClickListener(new View.OnClickListener() {
+                boolean handled = false;
+                if (input == EditorInfo.IME_ACTION_DONE) {
 
-                                 @Override
-                                 public void onClick(View v) {
-                                     EditText editBus = (EditText) findViewById(R.id.editText);
-                                     editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-                                         @Override
-                                         public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
-                                             boolean handled = false;
-                                             if (input == EditorInfo.IME_ACTION_DONE) {
-                                                 inputText = Integer.parseInt(textView.getText().toString());
-                                             }
-                                             return false;
-                                         }
+                    try {
+                        inputText = Integer.parseInt(textView.getText().toString());
+                    } catch (NumberFormatException e) {
+                        inputText = -1;
+                    }
 
-                                     });
-                                     Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                                     startActivity(i);
+                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                    startActivity(i);
+                    handled = true;
+                }
+                return handled;
+            }
 
+        });
 
-                                 }
-                             }
-
-        );
-
-
-//        EditText editBus = (EditText) findViewById(R.id.editText);
-//        editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-//            @Override
-//            public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
-//                boolean handled = false;
-//                if (input == EditorInfo.IME_ACTION_DONE) {
-//                    //show something?
-//                    int inputText = Integer.parseInt(textView.getText().toString());
-//                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
-//                    startActivity(i);
-//                }
-//                return false;
-//            }
-//        });
 
 
     }
-
 }
+
+
+
+
