@@ -26,17 +26,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        int userInput = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
         Button b = (Button) this.findViewById(R.id.button);
+
         b.setOnClickListener(new View.OnClickListener() {
 
                                  @Override
                                  public void onClick(View v) {
-
+                                     int bus = scanf(text);
                                      Intent i = new Intent(MainActivity.this, SecondActivity.class);
-                                     startActivity(i);
+
+                                         startActivity(i);
+
+                                     }
 
                                  }
                              }

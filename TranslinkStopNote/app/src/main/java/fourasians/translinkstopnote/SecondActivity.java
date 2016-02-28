@@ -14,6 +14,15 @@ public class SecondActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second);
+
+        if(userInput == 0) {
+            //set up error page with button that goes back
+        }
+
+        else {
+
+            //do shit
+        }
     }
 
 }
