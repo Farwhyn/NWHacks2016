@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         inputText = -1;
                     }
 
-                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                    Intent i = new Intent(MainActivity.this, BusStops.class);
                     startActivity(i);
                     handled = true;
                 }

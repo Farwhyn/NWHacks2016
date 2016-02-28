@@ -7,9 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.app.ListActivity;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
@@ -21,9 +19,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class SecondActivity extends AppCompatActivity {
+public class BusStops extends AppCompatActivity {
 
-    private int bus = 99;
+    //private int bus = 99;
     private Set<Integer> buses = new HashSet<>();
 
     private List<String> testBusStops = new ArrayList<>();
@@ -47,10 +45,19 @@ public class SecondActivity extends AppCompatActivity {
         buses.add(3);
         buses.add(99);
 
+        testBusStops.add("Commercial");
+        testBusStops.add("Clark");
+        testBusStops.add("Fraser");
         testBusStops.add("Main");
         testBusStops.add("Cambie");
+        testBusStops.add("Heather");
+        testBusStops.add("Granville");
         testBusStops.add("Arbutus");
-
+        testBusStops.add("MacDonald");
+        testBusStops.add("Alma");
+        testBusStops.add("Sasumat");
+        testBusStops.add("Allison");
+        testBusStops.add("UBC");
 
         int input = MainActivity.inputText;
         if (buses.contains(input)) {
@@ -83,7 +90,7 @@ public class SecondActivity extends AppCompatActivity {
             this.setContentView(scrollview);
 
         } else {
-            Intent i = new Intent(SecondActivity.this, MainActivity.class);
+            Intent i = new Intent(BusStops.this, MainActivity.class);
             startActivity(i);
 
         }

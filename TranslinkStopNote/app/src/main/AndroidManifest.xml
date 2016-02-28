@@ -29,6 +29,10 @@
         <activity
             android:name=".SecondActivity"
             android:label="@string/title_activity_second"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BusStops"
+            android:label="@string/title_activity_bus_stops"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
