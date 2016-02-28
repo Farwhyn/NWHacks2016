@@ -1,0 +1,38 @@
+Stop#		Stop Name	61	62	63	64	65	66	67	68	69	70	
+
+59270	this stop is wheelchair accessibleThis stop is a scheduled leave time. All stops between these are estimated based on normal service conditions.
+UBC LOOP BAY 6	10:22am	10:26am	10:31am	10:35am	10:40am	10:44am	10:49am	10:53am	10:58am	11:02am	
+
+50268	this stop is wheelchair accessible	EB UNIVERSITY BLVD AT ALLISON RD	10:23am	10:27am	10:32am	10:36am	10:41am	10:45am	10:50am	10:54am	10:59am	11:03am	
+
+50276	this stop is wheelchair accessible	EB W 10 AVE AT SASAMAT ST	10:30am	10:34am	10:40am	10:44am	10:49am	10:53am	10:58am	11:02am	11:07am	11:11am	
+
+58037	this stop is wheelchair accessible	EB W BROADWAY AT ALMA ST--	10:35am	10:39am	10:45am	10:49am	10:54am	10:58am	11:03am	11:07am	11:12am	11:16am	
+
+50319	this stop is wheelchair accessible	EB W BROADWAY AT MACDONALD ST	10:38am	10:42am	10:48am	10:52am	10:57am	11:01am	11:06am	11:10am	11:15am	11:19am	
+
+59997	this stop is wheelchair accessible	EB W BROADWAY AT ARBUTUS ST	10:41am	10:45am	10:52am	10:56am	11:01am	11:05am	11:10am	11:14am	11:19am	11:23am	
+
+58503	this stop is wheelchair accessible	EB W BROADWAY AT GRANVILLE ST--	10:44am	10:48am	10:55am	10:59am	11:04am	11:08am	11:13am	11:17am	11:22am	11:26am	
+
+52099	this stop is wheelchair accessible	EB W BROADWAY AT HEATHER ST	10:47am	10:51am	10:58am	11:02am	11:07am	11:11am	11:16am	11:20am	11:25am	11:29am	
+
+50875	this stop is wheelchair accessible	EB W BROADWAY AT CAMBIE ST	10:49am	10:53am	11:00am	11:04am	11:09am	11:13am	11:18am	11:22am	11:27am	11:31am	
+
+52101	this stop is wheelchair accessible	EB E BROADWAY AT MAIN ST	10:53am	10:57am	11:04am	11:08am	11:13am	11:17am	11:22am	11:26am	11:31am	11:35am	
+
+58614	this stop is wheelchair accessible	EB E BROADWAY AT FRASER ST	10:57am	11:01am	11:08am	11:12am	11:17am	11:21am	11:26am	11:30am	11:35am	11:39am	
+
+58499	this stop is wheelchair accessible	EB E BROADWAY AT CLARK DR--	11:00am	11:04am	11:11am	11:15am	11:20am	11:24am	11:29am	11:33am	11:38am	11:42am	
+
+58491	this stop is wheelchair accessible	NB COMMERCIAL DR AT N GRANDVIEW HWY	11:03am
+Unload Only	11:07am
+Unload Only	11:14am
+Unload Only	11:18am
+Unload Only	11:23am
+Unload Only	11:27am
+Unload Only	11:32am
+Unload Only	11:36am
+Unload Only	11:41am
+Unload Only	11:45am
+Unload Only
