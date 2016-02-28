@@ -41,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
         editBus.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
             public boolean onEditorAction(TextView textView, int input, KeyEvent keyEvent) {
-                Log.d("taga", "3");
 
                 boolean handled = false;
                 if (input == EditorInfo.IME_ACTION_DONE) {
@@ -52,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         inputText = -1;
                     }
 
-                    Intent i = new Intent(MainActivity.this, SecondActivity.class);
+                    Intent i = new Intent(MainActivity.this, BusStops.class);
                     startActivity(i);
                     handled = true;
                 }
