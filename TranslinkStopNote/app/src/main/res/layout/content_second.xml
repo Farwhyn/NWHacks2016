@@ -12,21 +12,12 @@
     tools:context="fourasians.translinkstopnote.SecondActivity"
     tools:showIn="@layout/activity_second">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="David"
-        android:id="@+id/textView4"
-        android:layout_marginTop="183dp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Button"
         android:id="@+id/button2"
-        android:layout_below="@+id/textView4"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="180dp" />
 </RelativeLayout>
