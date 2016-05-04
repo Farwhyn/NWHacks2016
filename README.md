@@ -1,2 +1,2 @@
-# nwhacks
-fdsjlkfjdsklfjds
+# Translink Stop Notifier Android App
+Are you the type to constantly nap during long bus rides and miss stops? The Translink Stop Notifier App is here to help! This app utilises the Translink Open API to provide real-time transit information for users. Simply input the bus number you're currently on, input the stop you wish to get off, and the app will calculate the time it will take for the bus to arrive at your chosen stop. What's more, the app will set an alarm to wake you up one minute before you arrive at your stop!
